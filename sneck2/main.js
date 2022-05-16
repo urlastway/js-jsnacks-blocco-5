@@ -1,6 +1,8 @@
 let tot = 0;
-let misuraminore = 0;
-let misuramagiore = 0;
+let misuraminore = [];
+let misuramagiore = [];
+let totMisuraminorePeso = 0;
+let totMiminorePeso = 0;
 
 const zucchineProperty =[
     {
@@ -68,13 +70,23 @@ const zucchineProperty =[
 console.log(zucchineProperty);
 
 for(let i = 0; i < zucchineProperty.length; i++){
-    if(zucchineProperty[i].peso <= 15){
-        misuraminore += zucchineProperty[i].peso;
+    if(zucchineProperty[i].lunchezza <= 15){
+        misuraminore.push(zucchineProperty[i]);
     }
     else{
-        misuramagiore += zucchineProperty[i].peso;
+        misuramagiore.push(zucchineProperty[i]);
     }
 }
 
 console.log(misuraminore);
 console.log(misuramagiore);
+
+for(let i = 0; i < misuraminore.length; i++){
+    totMisuraminorePeso += misuraminore[i].peso;
+}
+for(let i = 0; i < misuramagiore.length; i++){
+    totMiminorePeso += misuramagiore[i].peso;
+}
+
+console.log(totMisuraminorePeso);
+console.log(totMiminorePeso);
